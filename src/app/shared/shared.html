@@ -1,0 +1,39 @@
+<nav
+  class="flex justify-between items-center p-6 
+         fixed w-full z-50 top-0 left-0
+         backdrop-blur-xl bg-black/70 
+         border-b border-white/10
+         text-white/95">
+  
+  <div class="text-xl font-bold text-white">Waseem Ahmed</div>
+
+  <ul class="hidden md:flex space-x-6">
+    <li><a [routerLink]="['/']" class="hover:text-primary text-white/90">Home</a></li>
+    <li><a [routerLink]="['/about']" class="hover:text-primary text-white/90">About</a></li>
+    <li><a [routerLink]="['/skills']" class="hover:text-primary text-white/90">Skills</a></li>
+    <li><a [routerLink]="['/projects']" class="hover:text-primary text-white/90">Projects</a></li>
+    <li><a [routerLink]="['/contact']" class="hover:text-primary text-white/90">Contact</a></li>
+    <li><a href="Waseem CV.pdf" download class="hover:text-secondary cursor-pointer">Download CV</a></li></ul>
+
+  <div class="md:hidden">
+    <button (click)="toggleMenu()" class="focus:outline-none text-white text-2xl">
+      ☰
+    </button>
+  </div>
+</nav>
+
+
+@if (menuOpen) {
+  <div class="md:hidden 
+              backdrop-blur-xl bg-black/40 
+              text-white/95 shadow-lg p-6 space-y-4
+              absolute w-full z-40 top-20 left-0">
+    
+    <a [routerLink]="['/']" (click)="toggleMenu()" class="block hover:text-primary text-white/90">Home</a>
+    <a [routerLink]="['/about']" (click)="toggleMenu()" class="block hover:text-primary text-white/90">About</a>
+    <a [routerLink]="['/skills']" (click)="toggleMenu()" class="block hover:text-primary text-white/90">Skills</a>
+    <a [routerLink]="['/projects']" (click)="toggleMenu()" class="block hover:text-primary text-white/90">Projects</a>
+    <a [routerLink]="['/contact']" (click)="toggleMenu()" class="block hover:text-primary text-white/90">Contact</a>
+
+  </div>
+}
